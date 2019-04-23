@@ -1,0 +1,8 @@
+maindiseaseenhancer:desc maindiseaseenhancer;
+id enhchr enhstart enhend targetgene diseasetype
+
+subdiseaseenhancer:desc subdiseaseenhancer;
+id vartype varname varchr varstart varend targetgene muttype varcons pmid 
+
+enhancermutation:desc enhancermutation;
+id title length start end ty locus dataset sample 

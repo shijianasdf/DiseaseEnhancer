@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.multipart.maxSize" value="2048000000"/>
+	<package name="defaults" extends="struts-default,json-default" namespace="/">
+		
+		
+		
+		<!-- 搜索 -->
+		<action name="Search" class="actions.QuerySearchAction"> <!-- 分两个表，最终使用 -->
+			<result name="success">jsp/AdvancedSearch.jsp</result>
+			<result name="error">jsp/error.jsp</result>
+		</action>
+		
+		<action name="BatchSearch" class="actions.BatchSearchAction"> <!-- 分两个表，最终使用 -->
+			<result name="success">jsp/AdvancedSearch.jsp</result>
+			<result name="error">jsp/error.jsp</result>
+		</action>
+		
+		<action name="browseByPage" class="actions.SearchByPageAction">
+			<result name="success">jsp/Browser.jsp</result>
+			<result name="error">jsp/error.jsp</result>
+		</action>
+		
+		<!--表格劈叉 --><!--  <action name="AdvancedSearch" class="actions.QuerySearchAction1"> 
+			<result name="success">jsp/AdvancedSearch1.jsp</result>
+			<result name="error">jsp/error.jsp</result>
+		</action> -->
+		
+		<!--  <action name="QuickSearch" class="actions.QuickSearchAction">
+			<result name="success">jsp/SearchResult.jsp</result>
+			<result name="error">jsp/error.jsp</result>
+			<result name="empty">jsp/empty.jsp</result>
+		</action> -->
+		
+		<action name="Quick" class="actions.QuickSearchAction1"> <!-- 分两个表,最终使用 -->
+			<result name="success">jsp/SearchResult.jsp</result>
+			<result name="error">jsp/error.jsp</result>
+			<result name="empty">jsp/empty.jsp</result>
+		</action>
+		
+		<!-- 表格劈叉 --><!-- <action name="Quick2" class="actions.QuickSearchAction2"> 
+			<result name="success">jsp/SearchResult2.jsp</result>
+			<result name="error">jsp/error.jsp</result>
+			<result name="empty">jsp/empty.jsp</result>
+		</action> -->
+		
+		<action name="test" class="actions.TestAction">
+			<result name="success">test.jsp</result>
+		</action>
+		
+		<!--<action name="SearchSnv" class="actions.SearchSnvAction">
+			<result name="success" type="json">
+				 <param name="includeProperties">snvresult,categories,status</param>
+			</result>
+		</action> -->
+		
+		<action name="SearchDetail" class="actions.SearchDetailAction">
+			<result name="success" type="json">
+				 <param name="includeProperties">snvresult,jsonresult,categories, status</param>
+			</result>
+		</action>
+		
+		<action name="JumpToDownload" class="actions.JumpToDownloadAction">
+			<result name="success">jsp/Download.jsp</result>
+			
+		</action>
+		
+		<action name="JumpToAdvancedSearch" class="actions.JumpToAdvancedSearchAction">
+			<result name="success">jsp/AdvancedSearch.jsp</result>
+			
+		</action>
+		
+		<action name="JumpToSubmit" class="actions.JumpToSubmitAction">
+			<result name="success">jsp/Submit.jsp</result>
+		</action>
+		
+		<action name="JumpToHelp" class="actions.JumpToHelpAction">
+			<result name="success">jsp/HELP.jsp</result>
+		</action>
+		
+		<action name="JumpToContact" class="actions.JumpToContactAction">
+			<result name="success">jsp/Contact.jsp</result>
+		</action>
+		
+		<action name="submit" class="actions.SubmitAction">
+			<result name="success" type="json">
+				 <param name="includeProperties">name,status</param>
+			</result>
+		</action>
+		
+		<action name="ContactAction" class="actions.ContactAction">
+			<result name="success" type="json">
+				 <param name="includeProperties">username,useremail,status</param>
+			</result>
+		</action>
+		
+		<action name="Download" class="actions.DownloadAction">
+			<result type="stream" name="success">  
+                <param name="contentType">application/octet-stream;</param>  
+                <param name="contentDisposition">attachment;filename="${filename}"</param>  
+                <param name="bufferSize">4096</param>  
+                <param name="inputName">DiseaseEnhancer</param>
+            </result> 
+            <result name="error">jsp/error.jsp</result>
+		</action>
+		
+	</package>
+</struts>

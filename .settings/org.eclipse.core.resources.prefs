@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//WebContent/index.jsp=UTF-8
+encoding//WebContent/test-transcript.jsp=UTF-8
+encoding//src/actions/BatchSearchAction.java=UTF-8
+encoding//src/actions/QuerySearchAction.java=UTF-8
+encoding//src/actions/QuerySearchAction2.java=UTF-8
+encoding//src/mysqlUtils/mysqlReadUtils/SearchDbAccurateTable.java=UTF-8
+encoding/<project>=GBK
